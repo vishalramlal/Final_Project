@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <div align="center">
+      <style>
+       
+      </style>
+   </head>
+
+   <body>
+      <h1>Edit Post</h1>
+      {% for p in pp_list %}
+ <form action="/post/<id>" method="post">
+ 
+ <label for="o_title">Current Post Title:</label>
+ <input type="text" value="{{p.title}}" name="o_title" readonly></input><br>
+  <label for="title">Edit Post Title:</label>
+ <input type="text" name="title" required="required"></input><br>
+ <br>
+ <label for="o_author">Current Author Name:</label>
+ <input type="text" value="{{p.author}}" name="o_author" readonly></input><br>
+  <label for="author">Edit Author Name:</label>
+ <input type="text" name="author" required="required"></input><br>
+ 
+ <br>
+ <label for="o_content">Current Post Content:</label><br>
+ <textarea name="o_content" rows="10" cols="30" readonly> {{p.content}} </textarea><br>
+  <label for="content">Edit Post Content:</label><br>
+ <textarea name="content" rows="10" cols="30" required="required"> </textarea><br>
+ 
+ <br>
+ <label for="datetime">Date:</label>
+ <input type="text" value="{{cur_date}}" name="datetime" required="required" readonly></input><br>
+	  <input type="submit" value="Modify Post">
+	  </input>
+	  
+	</form>
+	{% endfor %}
+	
+	{% for message in get_flashed_messages() %}
+	<u1 class=flashes>{{ message }}</u1>
+          {% endfor %}
+          <br>
+          <br>
+          <br>
+          <br>
+          <a href="/dashboard">Go to Dashboard</a>
+          
+          
+      </div>
+   </body>
+</html>

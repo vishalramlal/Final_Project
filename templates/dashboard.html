@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <div align="center">
+      <style>
+        table, th, td {
+            border: 1px solid black;
+         }
+      </style>
+   </head>
+
+   <body>
+      <h1>Dashboard</h1>
+      <br>
+      <br>
+       <h2>List of Posts</h2>
+      <table>
+         <tr>
+            <th>Post Title</th>
+ 	
+         </tr>
+         {% for d in d_list %}
+         <tr>
+            <td>{{d.title}}</td>
+            <td><form action="/post/{{d.id}}" method="get">
+    <input type="submit" value="Edit" />
+</form>
+            </td>
+            
+	    <td>
+<form action="/delete/{{d.id}}" method="post">
+    <input type="submit" value="Delete" />
+</form>
+</td>
+         </tr>
+         {% endfor %}
+      </table>
+      <br>
+      <font size = "5">
+      <a href="/post/add">Add a Post</a>
+      
+		</font>
+	
+      </div>
+   </body>
+</html>

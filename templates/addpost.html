@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <div align="center">
+      <style>
+       
+      </style>
+   </head>
+
+   <body>
+      <h1>Add a new Post</h1>
+      
+ <form action="/post/add" method="post">
+ <label for="title">Post Title:</label>
+ <input type="text" name="title" required="required"></input><br>
+ <label for="author">Author Name:</label>
+ <input type="text" name="author" required="required"></input><br>
+ <br>
+ <label for="content">Post Content:</label><br>
+ <textarea name="content" rows="10" cols="30" required="required"></textarea><br>
+ <br>
+ <label for="datetime">Date:</label>
+ <input type="text" value="{{cur_date}}" name="datetime" required="required" readonly></input><br>
+	  <input type="submit" value="Add Post">
+	  </input>
+	</form>
+	{% for message in get_flashed_messages() %}
+	<u1 class=flashes>{{ message }}</u1>
+          {% endfor %}
+          <br>
+          <br>
+          <br>
+          <br>
+          <a href="/dashboard">Go to Dashboard</a>
+          
+          
+      </div>
+   </body>
+</html>

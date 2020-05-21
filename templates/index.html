@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <div align="center">
+      <style>
+       
+      </style>
+   </head>
+
+   <body>
+      <h1>Blog Posts</h1>
+      <br>
+      <a href="/login">Login Here</a>
+      <br>
+      <br>
+      <br>
+      {% for p in p_list %}
+      <h2>{{p.title}}</h2>  by {{p.author}}, posted:{{p.datetime}}
+ <p style="border:3px; border-style:solid; border-color:#000000; padding: 1em;">{{p.content}}</p>
+      {% endfor %}
+      </div>
+   </body>
+</html>
